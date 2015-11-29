@@ -1,31 +1,33 @@
 package org.jenkinsci.plugins.couchstats;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties({"_id","_rev"})
 public class StatsRecord {
 
-	@JsonProperty("id")
-	private String _id;
-	@JsonProperty("revision")
-	private String _rev;
+	@JsonProperty("_id")
+	private String id;
+	@JsonProperty("_rev")
+	private String rev;
 	private String jobName;
 	private String status;
 	private long duration;
 
 	public String getId() {
-		return _id;
+		return id;
 	}
 
-	public void setId(String _id) {
-		this._id = _id;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getRev() {
-		return _rev;
+		return rev;
 	}
 
-	public void setRev(String _rev) {
-		this._rev = _rev;
+	public void setRev(String rev) {
+		this.rev = rev;
 	}
 
 	public String getJobName() {

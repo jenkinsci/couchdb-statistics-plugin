@@ -28,8 +28,8 @@ public class CouchStatsListener extends RunListener<Run> {
 	public void onCompleted(final Run r, final TaskListener listener) {
 		CouchStatsConfig config = CouchStatsConfig.get();
 
-		if (config.getHost() == "") {
-			// not configured
+		if (config.getUrl() == null || config.getUrl() == "") {
+			LOGGER.log(Level.WARNING, "CouchStats plugin not configured, skipping");
 			return;
 		}
 
@@ -42,7 +42,8 @@ public class CouchStatsListener extends RunListener<Run> {
 				+ duration);
 
 		try {
-			HttpClient client = new StdHttpClient.Builder().url(config.getHost()).username(config.getUsername())
+			LOGGER.log(Level.INFO, "Sending stats to " + config.getUrl());
+			HttpClient client = new StdHttpClient.Builder().url(config.getUrl()).username(config.getUsername())
 					.password(config.getPassword()).build();
 
 			CouchDbInstance instance = new StdCouchDbInstance(client);

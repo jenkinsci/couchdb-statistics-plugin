@@ -17,7 +17,7 @@ public class CouchStatsConfig extends GlobalConfiguration {
 
 	private static final Logger LOGGER = Logger.getLogger(CouchStatsConfig.class.getName());
 
-	private String host;
+	private String url;
 	private String username;
 	private String password;
 	private String document;
@@ -26,12 +26,12 @@ public class CouchStatsConfig extends GlobalConfiguration {
 		load();
 	}
 
-	public String getHost() {
-		return host;
+	public String getUrl() {
+		return url;
 	}
 
-	public void setHost(String host) {
-		this.host = host;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public String getUsername() {
@@ -60,7 +60,7 @@ public class CouchStatsConfig extends GlobalConfiguration {
 
 	@Override
 	public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
-		this.host = formData.getString("host");
+		this.url = formData.getString("url");
 		this.username = formData.getString("username");
 		this.password = formData.getString("password");
 		this.document = formData.getString("document");
