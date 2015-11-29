@@ -3,7 +3,7 @@ package org.jenkinsci.plugins.couchstats;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonIgnoreProperties({"_id","_rev"})
+@JsonIgnoreProperties({ "_id", "_rev" })
 public class StatsRecord {
 
 	@JsonProperty("_id")
@@ -13,6 +13,24 @@ public class StatsRecord {
 	private String jobName;
 	private String status;
 	private long duration;
+	private long timeInMillis;
+	private String timeString;
+
+	public long getTimeInMillis() {
+		return timeInMillis;
+	}
+
+	public void setTimeInMillis(long timeInMillis) {
+		this.timeInMillis = timeInMillis;
+	}
+
+	public String getTimeString() {
+		return timeString;
+	}
+
+	public void setTimeString(String timeString) {
+		this.timeString = timeString;
+	}
 
 	public String getId() {
 		return id;

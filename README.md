@@ -8,13 +8,14 @@ Couch Stats plugin for Jenkins
 Configuration Options
 =====================
 
-Url (required)
+Nativate to `Manage Jenkins` > `Configure System`
 
-Username (required)
+Under the heading `CouchDB Statistics Configuration` complete the following entries:
 
-Password (required)
-
-Document (required)
+  * Url (required)
+  * Username (required)
+  * Password (required)
+  * Document (required) - the name of the document to store information
 
 Information Captured:
 
@@ -27,3 +28,6 @@ TODO
 
  * Need to implement form validation for the config pages
  * Capture extra information, timestamp, triggered by, build node... 
+ * Move plugin hosting to jenkins-ci.org
+ * Create 'proper' release for plugin
+

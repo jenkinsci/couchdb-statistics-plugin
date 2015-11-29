@@ -36,6 +36,8 @@ public class CouchStatsListener extends RunListener<Run> {
 		String jobName = r.getParent().getFullName().toString();
 		String result = r.getResult().toString();
 		long duration = r.getDuration();
+		long timeInMillis = r.getTimeInMillis();
+		String timeString = r.getTimestampString();
 
 		LOGGER.log(Level.INFO, "CouchStatsListener: config: " + config);
 		LOGGER.log(Level.INFO, "CouchStatsListener: job: " + jobName + ", result: " + result + ", duration: "
@@ -53,6 +55,8 @@ public class CouchStatsListener extends RunListener<Run> {
 			record.setJobName(jobName);
 			record.setStatus(result);
 			record.setDuration(duration);
+			record.setTimeInMillis(timeInMillis);
+			record.setTimeString(timeString);
 
 			LOGGER.log(Level.FINE, "Saving build record...");
 			StatsRecordRepository repository = new StatsRecordRepository(connector);
