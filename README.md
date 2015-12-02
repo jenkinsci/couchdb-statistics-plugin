@@ -1,7 +1,7 @@
-Couch Stats plugin for Jenkins
+CouchDB Statistics plugin for Jenkins
 ===============================
 
-[![Build Status](https://travis-ci.org/garethjevans/couch-stats-plugin.svg?branch=master)](https://travis-ci.org/garethjevans/couch-stats-plugin)
+[![Build Status](https://travis-ci.org/garethjevans/couchdb-statistics-plugin.svg?branch=master)](https://travis-ci.org/garethjevans/couchdb-statistics-plugin)
 
   A plugin to push build statistics to a couchdb/cloudant instance.
 
@@ -27,7 +27,7 @@ TODO
 ====
 
  * Need to implement form validation for the config pages
- * Capture extra information, timestamp, triggered by, build node... 
+ * Capture extra information e.g. triggered by, build node... 
  * Move plugin hosting to jenkins-ci.org
  * Create 'proper' release for plugin
 
