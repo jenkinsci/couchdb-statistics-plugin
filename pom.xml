@@ -10,6 +10,7 @@
   <artifactId>couchdb-statistics</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>hpi</packaging>
+  <url>https://wiki.jenkins-ci.org/display/JENKINS/CouchDB+Statistics+Plugin</url>
 
   <developers>
     <developer>
