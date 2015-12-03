@@ -50,4 +50,10 @@
     </pluginRepository>
   </pluginRepositories>
 
+  <scm>
+    <connection>scm:git:ssh://github.com/jenkinsci/couchdb-statistics-plugin.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/jenkinsci/couchdb-statistics-plugin.git</developerConnection>
+    <url>https://github.com/jenkinsci/couchdb-statistics-plugin</url>
+  </scm>
+
 </project>
