@@ -30,6 +30,3 @@ TODO
 
  * Need to implement form validation for the config pages
  * Capture extra information e.g. triggered by, build node... 
- * Move plugin hosting to jenkins-ci.org
- * Create 'proper' release for plugin
-
