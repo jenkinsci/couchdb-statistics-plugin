@@ -5,6 +5,8 @@ CouchDB Statistics plugin for Jenkins
 
   A plugin to push build statistics to a couchdb/cloudant instance.
 
+  https://wiki.jenkins-ci.org/display/JENKINS/CouchDB+Statistics+Plugin
+
 Configuration Options
 =====================
 
