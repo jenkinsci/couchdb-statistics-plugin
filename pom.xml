@@ -8,7 +8,7 @@
 
   <groupId>org.jenkins-ci.plugins</groupId>
   <artifactId>couchdb-statistics</artifactId>
-  <version>0.2.1</version>
+  <version>0.3-SNAPSHOT</version>
   <packaging>hpi</packaging>
   <url>https://wiki.jenkins-ci.org/display/JENKINS/CouchDB+Statistics+Plugin</url>
 
@@ -54,7 +54,7 @@
     <connection>scm:git:ssh://github.com/jenkinsci/couchdb-statistics-plugin.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/jenkinsci/couchdb-statistics-plugin.git</developerConnection>
     <url>https://github.com/jenkinsci/couchdb-statistics-plugin</url>
-    <tag>couchdb-statistics-0.2.1</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <build>
