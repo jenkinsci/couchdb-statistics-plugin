@@ -15,6 +15,15 @@ public class StatsRecord {
 	private long duration;
 	private long timeInMillis;
 	private String timeString;
+	private String timeStamp;
+
+	public String getTimeStamp() {
+		return timeStamp;
+	}
+
+	public void setTimeStamp(String timeStamp) {
+		this.timeStamp = timeStamp;
+	}
 
 	public long getTimeInMillis() {
 		return timeInMillis;
