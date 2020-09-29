@@ -51,8 +51,13 @@ public class CouchStatsListener extends RunListener<Run> {
 
 		try {
 			LOGGER.log(Level.INFO, "Sending stats to " + config.getUrl());
-			HttpClient client = new StdHttpClient.Builder().url(config.getUrl()).username(config.getUsername())
-					.password(config.getPassword()).build();
+			final String username = config.getUsername();
+			final String password = config.getPassword().getPlainText();
+			HttpClient client = new StdHttpClient.Builder()
+					.url(config.getUrl())
+					.username(username)
+					.password(password)
+					.build();
 
 			CouchDbInstance instance = new StdCouchDbInstance(client);
 			CouchDbConnector connector = new StdCouchDbConnector(config.getDocument(), instance);
@@ -70,7 +75,7 @@ public class CouchStatsListener extends RunListener<Run> {
 			repository.add(record);
 			LOGGER.log(Level.FINE, "Saving build record. Done");
 		} catch (MalformedURLException e) {
-			LOGGER.log(Level.SEVERE, "Unable to configure couchdb connector");
+			LOGGER.log(Level.SEVERE, "Unable to configure couchdb connector", e);
 		}
 	}
 }

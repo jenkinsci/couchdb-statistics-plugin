@@ -2,6 +2,7 @@ package org.jenkinsci.plugins.couchstats;
 
 import hudson.Extension;
 
+import hudson.util.Secret;
 import java.util.logging.Logger;
 
 import jenkins.model.GlobalConfiguration;
@@ -19,7 +20,7 @@ public class CouchStatsConfig extends GlobalConfiguration {
 
 	private String url;
 	private String username;
-	private String password;
+	private Secret password;
 	private String document;
 
 	public CouchStatsConfig() {
@@ -42,12 +43,12 @@ public class CouchStatsConfig extends GlobalConfiguration {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
+	public void setPassword(Secret password) {
+		this.password = password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public Secret getPassword() {
+		return password;
 	}
 
 	public String getDocument() {
@@ -62,7 +63,7 @@ public class CouchStatsConfig extends GlobalConfiguration {
 	public boolean configure(StaplerRequest req, JSONObject formData) throws FormException {
 		this.url = formData.getString("url");
 		this.username = formData.getString("username");
-		this.password = formData.getString("password");
+		this.password = Secret.fromString(formData.getString("password"));
 		this.document = formData.getString("document");
 
 		LOGGER.info("Saving config data");
