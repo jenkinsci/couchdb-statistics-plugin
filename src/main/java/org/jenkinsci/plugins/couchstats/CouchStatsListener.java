@@ -6,9 +6,11 @@ import hudson.model.Run;
 import hudson.model.listeners.RunListener;
 
 import java.net.MalformedURLException;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.annotation.Nonnull;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.CouchDbInstance;
 import org.ektorp.http.HttpClient;
@@ -28,13 +30,16 @@ public class CouchStatsListener extends RunListener<Run> {
 	public void onCompleted(final Run r, final TaskListener listener) {
 		CouchStatsConfig config = CouchStatsConfig.get();
 
-		if (config.getUrl() == null || config.getUrl() == "") {
+		if (config.getUrl() == null || config.getUrl().equals("")) {
 			LOGGER.log(Level.WARNING, "CouchStats plugin not configured, skipping");
 			return;
 		}
 
-		String jobName = r.getParent().getFullName().toString();
-		String result = r.getResult().toString();
+		String jobName = r.getParent().getFullName();
+		String result = "";
+		if (r.getResult() != null) {
+			result = String.format("%s", r.getResult());
+		}
 		long duration = r.getDuration();
 		long timeInMillis = r.getTimeInMillis();
 		String timeString = r.getTimestampString();
