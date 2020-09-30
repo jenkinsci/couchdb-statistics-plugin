@@ -3,82 +3,83 @@ package org.jenkinsci.plugins.couchstats;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonIgnoreProperties({ "_id", "_rev" })
+@JsonIgnoreProperties({"_id", "_rev"})
 public class StatsRecord {
 
-	@JsonProperty("_id")
-	private String id;
-	@JsonProperty("_rev")
-	private String rev;
-	private String jobName;
-	private String status;
-	private long duration;
-	private long timeInMillis;
-	private String timeString;
-	private String timeStamp;
+  @JsonProperty("_id")
+  private String id;
 
-	public String getTimeStamp() {
-		return timeStamp;
-	}
+  @JsonProperty("_rev")
+  private String rev;
 
-	public void setTimeStamp(String timeStamp) {
-		this.timeStamp = timeStamp;
-	}
+  private String jobName;
+  private String status;
+  private long duration;
+  private long timeInMillis;
+  private String timeString;
+  private String timeStamp;
 
-	public long getTimeInMillis() {
-		return timeInMillis;
-	}
+  public String getTimeStamp() {
+    return timeStamp;
+  }
 
-	public void setTimeInMillis(long timeInMillis) {
-		this.timeInMillis = timeInMillis;
-	}
+  public void setTimeStamp(String timeStamp) {
+    this.timeStamp = timeStamp;
+  }
 
-	public String getTimeString() {
-		return timeString;
-	}
+  public long getTimeInMillis() {
+    return timeInMillis;
+  }
 
-	public void setTimeString(String timeString) {
-		this.timeString = timeString;
-	}
+  public void setTimeInMillis(long timeInMillis) {
+    this.timeInMillis = timeInMillis;
+  }
 
-	public String getId() {
-		return id;
-	}
+  public String getTimeString() {
+    return timeString;
+  }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+  public void setTimeString(String timeString) {
+    this.timeString = timeString;
+  }
 
-	public String getRev() {
-		return rev;
-	}
+  public String getId() {
+    return id;
+  }
 
-	public void setRev(String rev) {
-		this.rev = rev;
-	}
+  public void setId(String id) {
+    this.id = id;
+  }
 
-	public String getJobName() {
-		return jobName;
-	}
+  public String getRev() {
+    return rev;
+  }
 
-	public void setJobName(String jobName) {
-		this.jobName = jobName;
-	}
+  public void setRev(String rev) {
+    this.rev = rev;
+  }
 
-	public String getStatus() {
-		return status;
-	}
+  public String getJobName() {
+    return jobName;
+  }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+  public void setJobName(String jobName) {
+    this.jobName = jobName;
+  }
 
-	public long getDuration() {
-		return duration;
-	}
+  public String getStatus() {
+    return status;
+  }
 
-	public void setDuration(long duration) {
-		this.duration = duration;
-	}
+  public void setStatus(String status) {
+    this.status = status;
+  }
 
+  public long getDuration() {
+    return duration;
+  }
+
+  public void setDuration(long duration) {
+    this.duration = duration;
+  }
 }
