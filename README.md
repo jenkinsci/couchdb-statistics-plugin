@@ -1,32 +1,21 @@
-CouchDB Statistics plugin for Jenkins
-===============================
+CouchDB Statistics plugin allows the publishing of all build statistics
+to CouchDB/Cloudant.
 
-[![Build Status](https://travis-ci.org/garethjevans/couchdb-statistics-plugin.svg?branch=master)](https://travis-ci.org/garethjevans/couchdb-statistics-plugin)
+## Installation Instructions
 
-  A plugin to push build statistics to a couchdb/cloudant instance.
+The plugin configuration is done under `Manage Jenkins` \>
+`Configure System`.
 
-  https://wiki.jenkins-ci.org/display/JENKINS/CouchDB+Statistics+Plugin
+![](docs/images/couch-stats-config.png)
 
-Configuration Options
-=====================
+## Change Log
 
-Nativate to `Manage Jenkins` > `Configure System`
+##### Version 0.2.1 (4th December 2015)
 
-Under the heading `CouchDB Statistics Configuration` complete the following entries:
+-   Converted password field to a 'password' box.
 
-  * Url (required)
-  * Username (required)
-  * Password (required)
-  * Document (required) - the name of the document to store information
+##### Version 0.2 (3rd December 2015)
 
-Information Captured:
-
-  * Job Name
-  * Status
-  * Duration
-
-TODO
-====
-
- * Need to implement form validation for the config pages
- * Capture extra information e.g. triggered by, build node... 
+-   Initial Release
+    -   Supports basic parameters, e.g. jobName, duration, buildNumber,
+        timestamp, status
