@@ -5,8 +5,7 @@ import org.ektorp.support.CouchDbRepositorySupport;
 
 public class StatsRecordRepository extends CouchDbRepositorySupport<StatsRecord> {
 
-	public StatsRecordRepository(CouchDbConnector connector) {
-		super(StatsRecord.class, connector, true);
-	}
-
+  public StatsRecordRepository(CouchDbConnector connector) {
+    super(StatsRecord.class, connector, true);
+  }
 }
