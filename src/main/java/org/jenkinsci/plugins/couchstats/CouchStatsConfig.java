@@ -1,10 +1,13 @@
 package org.jenkinsci.plugins.couchstats;
 
 import hudson.Extension;
+import hudson.util.FormValidation;
 import hudson.util.Secret;
 import java.util.logging.Logger;
 import jenkins.model.GlobalConfiguration;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
+import org.kohsuke.stapler.QueryParameter;
 import org.kohsuke.stapler.StaplerRequest;
 
 /** Global Configuration for Couch Stats. */
@@ -70,5 +73,20 @@ public class CouchStatsConfig extends GlobalConfiguration {
     return GlobalConfiguration.all().get(CouchStatsConfig.class);
   }
 
-  // @TODO: implement form validation
+  public FormValidation doCheckUrl(@QueryParameter String url) {
+    if (StringUtils.isEmpty(url)) {
+      return FormValidation.error("Url must not be empty");
+    }
+    if (url.startsWith("http://") || url.startsWith("https://")) {
+      return FormValidation.ok();
+    }
+    return FormValidation.error("Url must start with http:// or https://");
+  }
+
+  public FormValidation doCheckDocument(@QueryParameter String document) {
+    if (StringUtils.isEmpty(document)) {
+      return FormValidation.error("Document must not be empty");
+    }
+    return FormValidation.ok();
+  }
 }

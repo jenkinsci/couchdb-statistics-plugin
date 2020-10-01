@@ -9,6 +9,9 @@ The plugin configuration is done under `Manage Jenkins` \>
 ![](docs/images/couch-stats-config.png)
 
 ## Change Log
+##### Version 0.4 (29th September 2020)
+
+-   Storing DB password as encoded secret.
 
 ##### Version 0.2.1 (4th December 2015)
 
